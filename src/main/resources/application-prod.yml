@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://172.17.0.1:3306/app_2022_09_12__1__prod?useUnicode=true&characterEncoding=utf8&serverTimeZone=Asia/Seoul
+    username: lldjlocal
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: update
+logging:
+  level:
+    com.ll.exam: info
+custom:
+  genFileDirPath: /temp/storage

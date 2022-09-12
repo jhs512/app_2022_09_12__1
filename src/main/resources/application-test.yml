@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://127.0.0.1:3306/app_2022_09_12__1__test?useUnicode=true&characterEncoding=utf8&serverTimeZone=Asia/Seoul
+  output:
+    ansi:
+      enabled: always
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        use_sql_comments: true
+    hibernate:
+      ddl-auto: create
+logging:
+  level:
+    com.ll.exam: debug
+    org.hibernate.type.descriptor.sql: TRACE
+custom:
+  genFileDirPath: c:/temp/app_2022_09_12__1

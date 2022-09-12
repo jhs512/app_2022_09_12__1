@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout/layout.html}">
+
+<head>
+    <title>login</title>
+</head>
+
+<body>
+<section layout:fragment="content">
+    <div>로그인</div>
+
+    <div class="container">
+        <form method="POST" th:action="@{/member/login}">
+            <p>
+                <label>Username</label>
+                <input type="text" name="username" class="form-control" placeholder="Username" autofocus>
+            </p>
+            <p>
+                <label>Password</label>
+                <input type="password" name="password" class="form-control" placeholder="Password">
+            </p>
+            <button type="submit">로그인</button>
+        </form>
+
+        <div>
+            <a href="/oauth2/authorization/kakao">카카오로그인</a>
+        </div>
+    </div>
+</section>
+</body>
+
+</html>

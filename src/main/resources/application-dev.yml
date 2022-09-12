@@ -1,0 +1,24 @@
+server:
+  port: 8010
+spring:
+  output:
+    ansi:
+      enabled: always
+  thymeleaf:
+    enabled: true
+    cache: false
+    prefix: file:src/main/resources/templates/
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        use_sql_comments: true
+    hibernate:
+      ddl-auto: create
+logging:
+  level:
+    com.ll.exam: debug
+    org.hibernate.type.descriptor.sql: TRACE
+custom:
+  genFileDirPath: c:/temp/app_2022_09_12__1

@@ -1,0 +1,41 @@
+spring:
+  profiles:
+    include:
+      - addi
+    active: dev
+  datasource:
+    driverClassName: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/app_2022_09_12__1?useUnicode=true&characterEncoding=utf8&serverTimeZone=Asia/Seoul
+    username: root
+    password:
+  security:
+    oauth2:
+      client:
+        registration:
+          kakao:
+            clientId:
+            scope: profile_nickname, account_email
+            client-name: Kakao
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8010/login/oauth2/code/kakao
+            client-authentication-method: POST
+        provider:
+          kakao:
+            authorization-uri: https://kauth.kakao.com/oauth/authorize
+            token-uri: https://kauth.kakao.com/oauth/token
+            user-info-uri: https://kapi.kakao.com/v2/user/me
+            user-name-attribute: id
+  output:
+    ansi:
+      enabled: always
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+logging:
+  level:
+    com.ll.exam: debug
+custom:
+  sendgrid:
+    apiKey:
+    fromEmail: jangka512@gmail.com
